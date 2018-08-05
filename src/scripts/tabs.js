@@ -30,4 +30,20 @@
         </ul>
     </form>
 </div>`;
+
+    const form = divApp.querySelector("form");
+    let lastPanel;
+    const callback = function (e) {
+        const input = e.target;
+        const panel = document.getElementById(input.value);
+
+        if (lastPanel !== undefined) {
+            lastPanel.hidden = true;
+        }
+
+        panel.hidden = false;
+        lastPanel = panel;
+    };
+
+    form.addEventListener("change", callback, false);
 }());
