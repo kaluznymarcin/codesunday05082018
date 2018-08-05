@@ -17,7 +17,13 @@
 
     arenaElement.appendChild(moleElement);
 
-
+    arenaElement.addEventListener(
+        "click",
+        function (e) {
+            console.log(e.target);
+        },
+        false
+    );
 
     document.body.appendChild(gameElement);
 }());
