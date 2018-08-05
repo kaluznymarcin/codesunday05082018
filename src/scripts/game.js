@@ -1,4 +1,6 @@
 (function () {
+    let score = 0;
+
     const gameElement = document.createElement("div");
 
     const panelElement = document.createElement("div");
@@ -17,11 +19,22 @@
 
     arenaElement.appendChild(moleElement);
 
+    function callback(e) {
+        const clickedElement = e.target;
+        if (
+            clickedElement
+            .classList
+            .contains("mole")
+        ) {
+            score += 1;
+            // score = score + 1;
+            console.log(score);
+        }
+    }
+
     arenaElement.addEventListener(
         "click",
-        function (e) {
-            console.log(e.target);
-        },
+        callback,
         false
     );
 
